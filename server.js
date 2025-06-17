@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log("connected to the database");
+    console.log("connected to the database", process.env.MONGODB_URI);
     app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
   })
   .catch(err => console.log(err));

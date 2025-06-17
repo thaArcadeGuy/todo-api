@@ -8,6 +8,8 @@ const userRegister = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
+    console.log('Registration attempt:', { username, email });
+
     if (!email || !password || !email) {
       return res.status(400).json({
         error: "All fields are required"
@@ -32,6 +34,8 @@ const userRegister = async (req, res) => {
       JWT_SECRET,
       { expiresIn: "1d" } 
     );
+
+    console.log('User created:', { id: newUser._id, email: newUser.email });
 
     res.status(201).json({ 
       message: "Registration successful",
