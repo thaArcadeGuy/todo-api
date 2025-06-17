@@ -2,6 +2,12 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
+    username: {
+      type:String,
+      required: true,
+      unique: true,
+      sparse: true
+    },
     email: {
       type: String,
       required: true,
@@ -9,7 +15,6 @@ const UserSchema = new mongoose.Schema(
       lowercase: true,
       match: /.+\@.+\..+/
     },
-
     password: {
       type: String,
       required: true,
@@ -17,11 +22,6 @@ const UserSchema = new mongoose.Schema(
     },
     firstName: String,
     lastName: String,
-    username: {
-      type:String,
-      unique: true,
-      sparse: true
-    },
     profilePicture: String
   },
   {

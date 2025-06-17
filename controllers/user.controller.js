@@ -12,7 +12,7 @@ const getUserProfile = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Server Error" });
   }
-}
+};
 
 const updateUserProfile = async (req, res) => {
   try {
@@ -35,11 +35,11 @@ const updateUserProfile = async (req, res) => {
       return res.status(404).json({ error: "User Not Found" });
     }
 
-    res.json(user)
+    res.json(user);
   } catch (error) {
     res.status(500).json({ error: 'Server Error' });
   }
-}
+};
 
 const updateUserPassword = async (req, res) => {
   try {
@@ -71,7 +71,7 @@ const updateUserPassword = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Server Error' });
   }
-}
+};
 
 export {
   getUserProfile,

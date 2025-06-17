@@ -4,8 +4,8 @@ import {getUserProfile, updateUserProfile, updateUserPassword} from "../controll
 
 const userRoute = express.Router();
 
-userRoute.get("api/users/me", auth, getUserProfile);
-userRoute.put("api/users/me", auth, updateUserProfile);
-userRoute.put("api/users/me/password", auth, updateUserPassword);
+userRoute.get("/me", auth, getUserProfile);
+userRoute.put("/me", auth, updateUserProfile);
+userRoute.put("/me/password", auth, updateUserPassword);
 
 export default userRoute;
